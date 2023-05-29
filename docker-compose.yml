@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pokemon_db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: pokemon_researcher
+      POSTGRES_PASSWORD: oak
+      POSTGRES_DB: pokemon_database
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pokemon_data:/var/lib/postgresql/data 
+
